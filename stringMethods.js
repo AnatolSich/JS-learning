@@ -104,6 +104,113 @@ let name = "Вася";
 console.log( i18n`Hello, ${name}!` ); // Привет, Вася!
 
 
+var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var sln = txt.length;
+console.log(sln); //26
+var str = "My\n"; // 3 символа. Третий - перевод строки
+console.log( str.length ); // 3
+
+
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate");
+console.log(pos); //7
+var str = "Widget with id";
+console.log( str.indexOf("Widget") ); // 0, т.к. "Widget" найден прямо в начале str
+console.log( str.indexOf("id") ); // 1, т.к. "id" найден, начиная с позиции 1
+console.log( str.indexOf("widget") ); // -1, не найдено, так как поиск учитывает регистр
+console.log(str.indexOf("id", 2)) // 12, поиск начат с позиции 2
+console.log( ~2 ); // -(2+1) = -3
+console.log( ~1 ); // -(1+1) = -2
+console.log( ~0 ); // -(0+1) = -1
+console.log( ~-1 ); // -(-1+1) = 0
+//~n – ноль только в случае, когда n == -1
+/*проверка if ( ~str.indexOf(...) ) означает, что результат indexOf отличен от -1, 
+т.е. совпадение есть. */
+var str = "Widget";
+if (~str.indexOf("get")) {
+  console.log( 'совпадение есть!' );
+}
+var str = "Please locate where 'locate' occurs!";
+var pos = str.lastIndexOf("locate");
+console.log(pos);  //21
+var str = "Please locate where 'locate' occurs!";
+var pos = str.lastIndexOf("locate", 15);
+console.log(pos);   //7
+
+
+var str = "Ослик Иа-Иа посмотрел на виадук"; // ищем в этой строке
+var target = "Иа"; // цель поиска
+
+var pos = 0;
+while (true) {
+  var foundPos = str.indexOf(target, pos);
+  if (foundPos == -1) break;
+  console.log( foundPos ); // нашли на этой позиции
+  pos = foundPos + 1; // продолжить поиск со следующей
+}
+/*
+6
+9
+*/
+
+var str = "Ослик Иа-Иа посмотрел на виадук"; // ищем в этой строке
+var target = "Иа"; // цель поиска
+var pos = -1;
+while ((pos = str.indexOf(target, pos + 1)) != -1) {
+  console.log( pos );
+}
+/*
+6
+9
+*/
+
+var str = "Please locate where 'locate' occurs!";
+var pos = str.search("locate");
+console.log(pos);  //7
+
+var str = "Apple, Banana, Kiwi";
+var res = str.slice(7, 13);
+console.log(res);  //Banana
+
+var str = "Apple, Banana, Kiwi";
+var res = str.slice(-12, -6);
+console.log(res);  //Banana
+
+var str = "stringify";
+console.log(str.slice(2)); // ringify, символы с позиции 2 до конца
+var res = str.slice(-2);
+console.log(res);  //fy
+
+
+var str = "stringify";
+console.log(str.substring(0,1)); // "s", символы с позиции 0 по 1 не включая 1.
+
+var str = "stringify";
+str = str.substr(2,4); // ring, со 2-й позиции 4 символа
+console.log(str)
+
+
+str = "Please visit Microsoft and Microsoft!";
+var n = str.replace("Microsoft", "W3Schools");
+console.log(n); //Please visit W3Schools and Microsoft!
+
+
+str = "Please visit Microsoft!";
+var n = str.replace("MICROSOFT", "W3Schools");
+console.log(n); //Please visit Microsoft!
+str = "Please visit Microsoft!";
+var n = str.replace(/MICROSOFT/i, "W3Schools");
+console.log(n); //Please visit W3Schools!
+
+str = "Please visit Microsoft and Microsoft!";
+var n = str.replace(/Microsoft/g, "W3Schools");
+console.log(n); //Please visit W3Schools and W3Schools!
+
+
+var text1 = "Hello World!";       // String
+var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
+console.log(text2); //HELLO WORLD!
+console.log("Интерфейс" [0].toLowerCase()); // 'и' 
 
 
 console.log("foo".repeat(3)); // foofoofoo
