@@ -206,11 +206,63 @@ str = "Please visit Microsoft and Microsoft!";
 var n = str.replace(/Microsoft/g, "W3Schools");
 console.log(n); //Please visit W3Schools and W3Schools!
 
+var str = "       Hello World!        ";
+console.log(str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, ''));  //Hello World!
+
 
 var text1 = "Hello World!";       // String
 var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
 console.log(text2); //HELLO WORLD!
 console.log("Интерфейс" [0].toLowerCase()); // 'и' 
 
+var text = "Hello" + " " + "World!";
+var text = "Hello".concat(" ", "World!");
+
+
+var str = "jQuery";
+console.log( str.charAt(0) ); // "j"
+var str = "Я - современный браузер!";
+console.log( str[0] ); // "Я"
+console.log ( "".charAt(0) ); // пустая строка
+console.log ( "" [0] ); // undefined
+
+
+var str = "HELLO WORLD";
+str.charCodeAt(0);         // returns 72
+alert( String.fromCharCode(1072) ); // 'а'
+
+
+
+"Вася" > "Ваня" // true, т.к. начальные символы совпадают, а потом 'с' > 'н'
+"Дома" > "До" // true, т.к. начало совпадает, но в 1-й строке больше символов
+alert( "2" > "14" ); // true, так как это строки, и для первых символов верно "2" > "1"
+/*Если хотя бы один аргумент – не строка, то другой будет преобразован к числу*/
+alert( 2 > "14" ); // false
+console.log('8' == 8); //true
+
+var str = "Ёлки";
+console.log( str.localeCompare("Яблони") ); // -1
+
+var txt = "a,b,c,d,e";   // String
+txt.split(",");          // Split on commas
+txt.split(" ");          // Split on spaces
+txt.split("|");          // Split on pipe
+var txt = "Hello";       // String
+txt.split("");           // Split in characters
 
 console.log("foo".repeat(3)); // foofoofoo
+
+var str = "Hello world, welcome to the universe.";
+var n = str.includes("world");
+console.log(n);  //true
+var str = "Hello world, welcome to the universe.";
+var n = str.includes("world", 12);
+console.log(n);  //false
+
+var str = "Hello world, welcome to the universe.";
+var n = str.startsWith("world", 6);
+console.log(n);  //true
+var str = "Hello world, welcome to the universe.";
+var n = str.endsWith("world", 11);
+console.log(n);  //true
+
