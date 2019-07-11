@@ -190,10 +190,10 @@ str = str.substr(2,4); // ring, со 2-й позиции 4 символа
 console.log(str)
 
 
+
 str = "Please visit Microsoft and Microsoft!";
 var n = str.replace("Microsoft", "W3Schools");
 console.log(n); //Please visit W3Schools and Microsoft!
-
 
 str = "Please visit Microsoft!";
 var n = str.replace("MICROSOFT", "W3Schools");
@@ -208,6 +208,7 @@ console.log(n); //Please visit W3Schools and W3Schools!
 
 var str = "       Hello World!        ";
 console.log(str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, ''));  //Hello World!
+
 
 
 var text1 = "Hello World!";       // String
@@ -240,8 +241,12 @@ alert( "2" > "14" ); // true, так как это строки, и для пе�
 alert( 2 > "14" ); // false
 console.log('8' == 8); //true
 
+
+
 var str = "Ёлки";
 console.log( str.localeCompare("Яблони") ); // -1
+
+
 
 var txt = "a,b,c,d,e";   // String
 txt.split(",");          // Split on commas
@@ -250,7 +255,11 @@ txt.split("|");          // Split on pipe
 var txt = "Hello";       // String
 txt.split("");           // Split in characters
 
+
+
 console.log("foo".repeat(3)); // foofoofoo
+
+
 
 var str = "Hello world, welcome to the universe.";
 var n = str.includes("world");
@@ -259,10 +268,14 @@ var str = "Hello world, welcome to the universe.";
 var n = str.includes("world", 12);
 console.log(n);  //false
 
+
+
 var str = "Hello world, welcome to the universe.";
 var n = str.startsWith("world", 6);
 console.log(n);  //true
 var str = "Hello world, welcome to the universe.";
 var n = str.endsWith("world", 11);
 console.log(n);  //true
+
+
 
